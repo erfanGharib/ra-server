@@ -1,6 +1,5 @@
 {
     "name": "server",
-    "type": "module",
     "scripts": {
         "api:start": "node dist/src/index",
         "api:build": "cd api && swc src -d dist ./",

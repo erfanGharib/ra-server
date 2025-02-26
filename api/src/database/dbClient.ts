@@ -1,12 +1,13 @@
 import { Sequelize } from 'sequelize';
 import { env } from 'process';
 
-export const sequelize = new Sequelize(
-  env.DATABASE_NAME,
-  env.DATABASE_USER, 
-  env.DATABASE_PASSWORD,
+export const dbClient = new Sequelize(
+  env.DB_NAME,
+  env.DB_USER, 
+  env.DB_PASSWORD,
   {
-      host: env.DATABASE_HOST,
-      dialect: 'postgres'
+    port: Number(env.DB_PORT),
+    host: env.DB_HOST,
+    dialect: 'postgres'
   }
 );
